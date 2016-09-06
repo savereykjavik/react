@@ -5,11 +5,15 @@ import './NewGame.css';
 const NewGame = React.createClass({
   displayName: 'NewGame',
 
+  propTypes: {
+    handleStartNewGame: React.PropTypes.func
+  },
+
   render() {
     return (
-      <div className="NewGame">
+      <button className="NewGame" onClick={this.props.handleStartNewGame} >
         Fetch & play!
-      </div>
+      </button>
     );
   }
 })

@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 
 import './App.css';
@@ -9,28 +10,58 @@ import Footer from './Footer.js';
 const App = React.createClass({
   displayName: 'App',
 
+  getInitialState() {
+    return {
+      numberOfCards: 0,
+      cards: {},
+      images: [],
+      flipped: [],
+    }
+  },
 
+  handleStartNewGame() {
+
+    const numberOfCards = 4
+
+    let images = [
+      { id: 0, src: '/images/nara01.jpg'},
+      { id: 1, src: '/images/nara02.jpg'}
+    ]
+
+    images = _.shuffle(_.concat([], images, images));
+
+    let cards = {};
+
+    for (let i = 0; i < numberOfCards; i++) {
+      cards[i] = { id: i,
+          images: images[i],
+          isFlipped: false }
+    }
+
+    this.setState(
+      { numberOfCards: numberOfCards,
+        cards: cards,
+        images: images }
+    )
+
+    console.log('numberOfCards: ', numberOfCards)
+    console.log('cards: ', cards)
+    console.log('images: ', images)
+
+  },
+
+  // skickar med något till footer, - REFERENS till funktionen, därför ingen parantes. this. säger att det är i hela scopet, had annars inte hitta. behöver inte heta handle.. men för enkelhets skull
   render() {
     return (
       <div className="App">
         <Header />
         <Content />
-        <Footer />
+        <Footer handleStartNewGame={this.handleStartNewGame}/>
       </div>
     );
   }
+
 })
 
+
 export default App;
-
-
-// Först externa bibliotek högst upp, i bokstavsordning, sedan egna
-// from - sparas undan i en variabel
-// render är som en nyckel i ett objekt (sätta object obj[n] = "x")
-// nya JS gör inte var. const och let. Let kommer oftast funka, men försök använda const när den ska användas.
-// klasser har inte funnits i javascript tidigare. Gjort en abstaction som är klass. Klass ger dom egenskaper som en klass skulle haft. Annie gör aldrig klasser. Gmla sättet
-// const här var tidigare class
-// skapar reactclasser
-// i componenter finns både JS och css - render är det som renderas ut på skärmen. Du kan skriva html i JS-fil med JSX
-// i html heter det class i JS className. I JSX används " inte '. HTML stoppas in i curly brackets.
-// app kommer behöva rendera ut header, content och footer. Brukar ge all akomponenter färg.
