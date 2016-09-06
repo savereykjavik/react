@@ -1,5 +1,6 @@
 {
   "name": "hello-world",
+  "homepage": "http://savereykjavik.github.io/react",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
