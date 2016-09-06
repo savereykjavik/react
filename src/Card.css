@@ -1,0 +1,6 @@
+.Card {
+  height: 50%;
+  padding: 15px;
+  background-size: contain;
+  background-image: url('/images/nara01.jpg');
+}
