@@ -24,8 +24,8 @@ const App = React.createClass({
     const numberOfCards = 4
 
     let images = [
-      { id: 0, src: '/images/nara01.jpg'},
-      { id: 1, src: '/images/nara02.jpg'}
+      { id: 0, src: 'images/nara01.jpg'},
+      { id: 1, src: 'images/nara02.jpg'}
     ]
 
     images = _.shuffle(_.concat([], images, images));
