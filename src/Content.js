@@ -30,12 +30,11 @@ const Content = React.createClass({
 
     const cards = _.map(this.props.cards, function(card) {
       return (
-        <div key={card.id}>
+        <div key={card.id} onClick={this.getComponent.bind(this)}>
           <Card />
         </div>
       )
     })
-
     return cards
   },
 
@@ -45,6 +44,11 @@ const Content = React.createClass({
         {this.renderCards()}
       </div>
     );
+  },
+
+  getComponent(event) {
+      console.log('item clicked!');
+      event.currentTarget.style.backgroundColor = '#ccc';
   }
 })
 
