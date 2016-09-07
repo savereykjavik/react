@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 import './Content.css';
 import Card from './Card.js';
@@ -13,31 +14,29 @@ const Content = React.createClass({
   renderCards() {
     console.log('running renderCards')
 
-    let listOfCards = [];
+    // let listOfCards = [];
+    //
+    // for (let i = 0; i < this.props.numberOfCards; i++) {
+    //   let card = (
+    //     <div key={this.props.cards[i].id}>
+    //       <Card />
+    //     </div>
+    //   )
+    //   listOfCards.push(card);
+    // }
+    // console.log(listOfCards);
+    // return listOfCards
 
-    for (let i = 0; i < this.props.numberOfCards; i++) {
-      let card = (
-        <div key={this.props.cards[i].id}>
+
+    const cards = _.map(this.props.cards, function(card) {
+      return (
+        <div key={card.id}>
           <Card />
         </div>
       )
+    })
 
-      listOfCards.push(card);
-    }
-
-    console.log(listOfCards);
-    return listOfCards
-
-    // let cards = listOfCards;
-    // return (
-    //   <div>
-    //     {cards.map(function(cards) {
-    //       return <div key={cards.id}> <Card /> </div>
-    //     })}
-    //   </div>
-    // )
-
-
+    return cards
   },
 
   render() {
