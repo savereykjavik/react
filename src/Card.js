@@ -7,7 +7,7 @@ const Card = React.createClass({
 
   render() {
     return (
-      <div className="Card col-xs-6">
+      <div className="Card">
       </div>
     );
   }

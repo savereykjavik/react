@@ -1,6 +1,8 @@
 .Card {
-  height: 50%;
+  height: 225px;
+  width: 225px;
   padding: 15px;
-  background-size: contain;
-  background-image: url('images/nara01.jpg');
+  float: left;
+  border:1px solid gray;
+  /*background-image: url('images/nara01.jpg');*/
 }

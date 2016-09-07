@@ -41,8 +41,8 @@ const App = React.createClass({
     this.setState(
       { numberOfCards: numberOfCards,
         cards: cards,
-        images: images }
-    )
+        images: images
+    })
 
     console.log('numberOfCards: ', numberOfCards)
     console.log('cards: ', cards)
@@ -55,7 +55,10 @@ const App = React.createClass({
     return (
       <div className="App">
         <Header />
-        <Content />
+        <Content
+          cards={this.state.cards}
+          numberOfCards={this.state.numberOfCards}
+        />
         <Footer handleStartNewGame={this.handleStartNewGame}/>
       </div>
     );
