@@ -13,9 +13,9 @@ const Content = React.createClass({
 
   renderCards() {
     console.log('running renderCards')
-
+    
+    // if done with for loop:
     // let listOfCards = [];
-    //
     // for (let i = 0; i < this.props.numberOfCards; i++) {
     //   let card = (
     //     <div key={this.props.cards[i].id}>
@@ -49,10 +49,6 @@ const Content = React.createClass({
     );
   },
 
-  // getComponent(event) {
-  //     console.log('item clicked!');
-  //     event.currentTarget.style.backgroundColor = '#ccc';
-  // }
 })
 
 export default Content;

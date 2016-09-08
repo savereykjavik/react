@@ -14,7 +14,7 @@ const Card = React.createClass({
   render() {
     return (
       <div className="Card">
-        <img src= {this.props.image.src} />
+        <img src={this.props.image.src} alt="card"/>
       </div>
     );
   }
