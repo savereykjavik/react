@@ -54,14 +54,14 @@ const App = React.createClass({
       { id: 5, src: img06},
       { id: 6, src: img07},
       { id: 7, src: img08},
-      { id: 8, src: img09},
-      { id: 9, src: img10},
-      { id: 10, src: img11},
-      { id: 11, src: img12},
-      { id: 12, src: img13},
-      { id: 13, src: img14},
-      { id: 14, src: img15},
-      { id: 15, src: img16}
+      // { id: 8, src: img09},
+      // { id: 9, src: img10},
+      // { id: 10, src: img11},
+      // { id: 11, src: img12},
+      // { id: 12, src: img13},
+      // { id: 13, src: img14},
+      // { id: 14, src: img15},
+      // { id: 15, src: img16}
     ]
 
     images = _.shuffle(_.concat([], images, images));
