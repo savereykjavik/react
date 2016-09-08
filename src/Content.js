@@ -8,26 +8,13 @@ const Content = React.createClass({
 
   propTypes: {
     cards: React.PropTypes.object,
+    flipCard: React.PropTypes.func,
     numberOfCards: React.PropTypes.number,
   },
 
   renderCards() {
     console.log('running renderCards')
-    
-    // if done with for loop:
-    // let listOfCards = [];
-    // for (let i = 0; i < this.props.numberOfCards; i++) {
-    //   let card = (
-    //     <div key={this.props.cards[i].id}>
-    //       <Card />
-    //     </div>
-    //   )
-    //   listOfCards.push(card);
-    // }
-    // console.log(listOfCards);
-    // return listOfCards
-
-
+    const _this = this
     const cards = _.map(this.props.cards, function(card) {
       return (
         <Card
@@ -35,10 +22,12 @@ const Content = React.createClass({
           id={card.id}
           image={card.images}
           isFlipped={card.isFlipped}
+          flipCard={_this.props.flipCard}
         />
       )
     })
     return cards
+
   },
 
   render() {

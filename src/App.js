@@ -1,6 +1,9 @@
 import _ from 'lodash';
 import React from 'react';
 
+// import img01 from './images/nara01.jpg';
+// import img02 from './images/nara02.jpg';
+
 import './App.css';
 import Header from './Header.js';
 import Content from './Content.js';
@@ -50,19 +53,62 @@ const App = React.createClass({
 
   },
 
+  flipCard(cardID) {
+
+
+
+    let cards = _.cloneDeep(this.state.cards)
+    cards[cardID].isFlipped = true
+
+    let flipped = _.cloneDeep(this.state.flipped)
+    flipped.push(cards[cardID])
+
+
+    console.log('Card clicked: ', cardID );
+    console.log('flipped:', flipped);
+
+    this.setState({
+        cards: cards,
+        flipped: flipped
+      }, () => {
+        if (flipped.length === 2) {
+          this.compareCards(flipped, cards)
+        }
+      })
+    },
+
+    compareCards(flipped, cards) {
+      const cardOne = flipped[0]
+      const cardTwo = flipped[1]
+
+      if (cardOne.images.id === cardTwo.images.id) {
+        cards[cardOne.id].images.src = './images/success.gif'
+        cards[cardTwo.id].images.src = './images/success.gif'
+      } else {
+        cards[cardOne.id].isFlipped = false
+        cards[cardTwo.id].isFlipped = false
+      }
+      this.setState({
+        cards: cards,
+        flipped: [],
+      })
+    },
+
   // skickar med något till footer, - REFERENS till funktionen, därför ingen parantes. this. säger att det är i hela scopet, had annars inte hitta. behöver inte heta handle.. men för enkelhets skull
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <Content
-          cards={this.state.cards}
-          numberOfCards={this.state.numberOfCards}
-        />
-        <Footer handleStartNewGame={this.handleStartNewGame}/>
-      </div>
-    );
-  }
+  // skickar med referens till funktionen flipCard
+    render() {
+      return (
+        <div className="App">
+          <Header />
+          <Content
+            cards={this.state.cards}
+            flipCard={this.flipCard}
+            numberOfCards={this.state.numberOfCards}
+          />
+          <Footer handleStartNewGame={this.handleStartNewGame}/>
+        </div>
+      );
+    }
 
 })
 
