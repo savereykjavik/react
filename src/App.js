@@ -76,7 +76,7 @@ const App = React.createClass({
 
     if (flipped.length === 2) {
         console.log('two cards clicked - would like to sleep function here')
-        setTimeout(() => this.compareCards(flipped, cards), 2000);
+        setTimeout(() => this.compareCards(flipped, cards), 1000);
     }
   },
 
