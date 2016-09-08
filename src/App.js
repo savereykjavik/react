@@ -81,12 +81,11 @@ const App = React.createClass({
         cards: cards,
         flipped: flipped
       })
-
     console.log('updated state first time')
 
     if (flipped.length === 2) {
+        console.log('two cards clicked - would like to sleep function here')
         this.compareCards(flipped, cards)
-
     }
 
   },
@@ -99,7 +98,6 @@ const App = React.createClass({
       cards[cardOne.id].images.src = imgsuccess
       cards[cardTwo.id].images.src = imgsuccess
     } else {
-      console.log('not a match - would like to sleep function here')
       cards[cardOne.id].isFlipped = false
       cards[cardTwo.id].isFlipped = false
 
