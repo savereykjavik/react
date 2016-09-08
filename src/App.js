@@ -27,15 +27,6 @@ const App = React.createClass({
     this.handleStartNewGame()
   },
 
-  sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
-      }
-    }
-  },
-
   handleStartNewGame() {
 
     const numberOfCards = 4
@@ -85,9 +76,8 @@ const App = React.createClass({
 
     if (flipped.length === 2) {
         console.log('two cards clicked - would like to sleep function here')
-        this.compareCards(flipped, cards)
+        let func = this.compareCards(flipped, cards)
     }
-
   },
 
   compareCards(flipped, cards) {
