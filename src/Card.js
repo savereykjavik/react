@@ -1,4 +1,5 @@
 import React from 'react';
+import imgback from '../images/back.jpg';
 import './Card.css';
 
 
@@ -14,7 +15,8 @@ const Card = React.createClass({
 
   render() {
 
-    let image = (this.props.isFlipped) ? (<img className="Card-image" src={this.props.image.src} alt="card"/>) : null
+    let image = (this.props.isFlipped) ? (<img className="Card-image" src={this.props.image.src} alt="card"/>) :
+      (<img className="Back-image" src={imgback} alt="card"/>)
 
 // bind argument etc.. kolla upp mer
     return (

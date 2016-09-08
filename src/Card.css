@@ -1,8 +1,14 @@
 .Card {
   height: 200px;
   width: 200px;
-  padding: 1px;
+  padding: 3px;
   float: left;
-  background-color: rgb(218, 218, 218);
-  /*background-image: url('images/nara01.jpg');*/
+}
+
+.Back-image {
+  transition: all .2s ease-in-out;
+}
+.Back-image:hover {
+    cursor: pointer;
+    transform: scale(1.03);
 }

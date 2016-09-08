@@ -1,13 +1,13 @@
 .NewGame {
   border: none;
-  font-size: 2em;
-  color: #2e7171;
+  font-size: 1.8em;
+  color: #ffffff;
   font-family: 'Pacifico', cursive;
   padding: 18px 35px 20px 35px;
   margin: 0 auto;
   width: 263px;
   border-radius: 31px;
-  background-color: rgb(255, 241, 77);
+  background-color: rgb(199, 64, 64);
 }
 
 .NewGame:hover {

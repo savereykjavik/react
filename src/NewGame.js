@@ -12,7 +12,7 @@ const NewGame = React.createClass({
   render() {
     return (
       <button className="NewGame" onClick={this.props.handleStartNewGame} >
-        Fetch & play!
+        Start new game!
       </button>
     );
   }

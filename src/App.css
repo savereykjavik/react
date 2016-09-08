@@ -11,4 +11,8 @@ button:focus {outline:0;}
 
 img {
   max-width: 100%;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(169,169,169,0.92);
+  -moz-box-shadow: 1px 1px 1px 0px rgba(169,169,169,0.92);
+  box-shadow: 1px 1px 1px 0px rgba(169,169,169,0.92);
 }
