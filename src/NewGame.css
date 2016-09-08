@@ -7,7 +7,7 @@
   margin: 0 auto;
   width: 263px;
   border-radius: 31px;
-  background-color: rgb(41, 41, 41);
+  background-color: rgba(245, 63, 63, 0.86);
 }
 
 .NewGame:hover {

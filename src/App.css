@@ -1,5 +1,5 @@
 .App {
-  max-width: 400px;
+  max-width: 500px;
   padding: 0px;
   margin: 0 auto;
   min-height: 100vh;
@@ -11,7 +11,7 @@ button:focus {outline:0;}
 
 img {
   max-width: 100%;
-  border-radius: 15px;
+  border-radius: 10px;
   -webkit-box-shadow: 1px 1px 1px 0px rgba(169,169,169,0.92);
   -moz-box-shadow: 1px 1px 1px 0px rgba(169,169,169,0.92);
   box-shadow: 1px 1px 1px 0px rgba(169,169,169,0.92);

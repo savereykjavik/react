@@ -3,6 +3,20 @@ import React from 'react';
 
 import img01 from '../images/nara01.jpg';
 import img02 from '../images/nara02.jpg';
+import img03 from '../images/nara03.jpg';
+import img04 from '../images/nara04.jpg';
+import img05 from '../images/nara05.jpg';
+import img06 from '../images/nara06.jpg';
+import img07 from '../images/nara07.jpg';
+import img08 from '../images/nara08.jpg';
+import img09 from '../images/nara09.jpg';
+import img10 from '../images/nara10.jpg';
+import img11 from '../images/nara11.jpg';
+import img12 from '../images/nara12.jpg';
+import img13 from '../images/nara13.jpg';
+import img14 from '../images/nara14.jpg';
+import img15 from '../images/nara15.jpg';
+import img16 from '../images/nara16.jpg';
 import imgsuccess from '../images/success.gif';
 
 import './App.css';
@@ -29,11 +43,25 @@ const App = React.createClass({
 
   handleStartNewGame() {
 
-    const numberOfCards = 4
+    const numberOfCards = 16
 
     let images = [
       { id: 0, src: img01},
-      { id: 1, src: img02}
+      { id: 1, src: img02},
+      { id: 2, src: img03},
+      { id: 3, src: img04},
+      { id: 4, src: img05},
+      { id: 5, src: img06},
+      { id: 6, src: img07},
+      { id: 7, src: img08},
+      { id: 8, src: img09},
+      { id: 9, src: img10},
+      { id: 10, src: img11},
+      { id: 11, src: img12},
+      { id: 12, src: img13},
+      { id: 13, src: img14},
+      { id: 14, src: img15},
+      { id: 15, src: img16}
     ]
 
     images = _.shuffle(_.concat([], images, images));
@@ -61,6 +89,7 @@ const App = React.createClass({
   flipCard(cardID) {
 
     if (this.state.cards[cardID].isFlipped) {return}
+    if (this.state.flipped.length === 2) {return}
 
     let cards = _.cloneDeep(this.state.cards)
     cards[cardID].isFlipped = true
@@ -76,7 +105,7 @@ const App = React.createClass({
 
     if (flipped.length === 2) {
         console.log('two cards clicked - would like to sleep function here')
-        setTimeout(() => this.compareCards(flipped, cards), 1000);
+        setTimeout(() => this.compareCards(flipped, cards), 1500);
     }
   },
 
