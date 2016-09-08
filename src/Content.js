@@ -14,29 +14,31 @@ const Content = React.createClass({
   renderCards() {
     console.log('running renderCards')
 
-    let listOfCards = [];
-
-    for (let i = 0; i < this.props.numberOfCards; i++) {
-      let card = (
-        <div key={this.props.cards[i].id} onClick={self.getComponent.bind(this)}>
-          <Card />
-        </div>
-      )
-      listOfCards.push(card);
-    }
-    console.log(listOfCards);
-    return listOfCards
-
-    // const self = this;
-
-    // const cards = _.map(self.props.cards, function(card) {
-    //   return (
-    //     <div key={card.id} onClick={self.getComponent}>
+    // let listOfCards = [];
+    //
+    // for (let i = 0; i < this.props.numberOfCards; i++) {
+    //   let card = (
+    //     <div key={this.props.cards[i].id}>
     //       <Card />
     //     </div>
     //   )
-    // })
-    // return cards
+    //   listOfCards.push(card);
+    // }
+    // console.log(listOfCards);
+    // return listOfCards
+
+
+    const cards = _.map(this.props.cards, function(card) {
+      return (
+        <Card
+          key={card.id}
+          id={card.id}
+          image={card.images}
+          isFlipped={card.isFlipped}
+        />
+      )
+    })
+    return cards
   },
 
   render() {
@@ -47,10 +49,10 @@ const Content = React.createClass({
     );
   },
 
-  getComponent(event) {
-      console.log('item clicked!');
-      event.currentTarget.style.backgroundColor = '#ccc';
-  }
+  // getComponent(event) {
+  //     console.log('item clicked!');
+  //     event.currentTarget.style.backgroundColor = '#ccc';
+  // }
 })
 
 export default Content;
