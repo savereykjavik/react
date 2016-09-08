@@ -1,8 +1,9 @@
 import _ from 'lodash';
 import React from 'react';
 
-// import img01 from './images/nara01.jpg';
-// import img02 from './images/nara02.jpg';
+import img01 from '../images/nara01.jpg';
+import img02 from '../images/nara02.jpg';
+import imgsuccess from '../images/success.gif';
 
 import './App.css';
 import Header from './Header.js';
@@ -27,8 +28,8 @@ const App = React.createClass({
     const numberOfCards = 4
 
     let images = [
-      { id: 0, src: './images/nara01.jpg'},
-      { id: 1, src: './images/nara02.jpg'}
+      { id: 0, src: img01},
+      { id: 1, src: img02}
     ]
 
     images = _.shuffle(_.concat([], images, images));
@@ -82,8 +83,8 @@ const App = React.createClass({
       const cardTwo = flipped[1]
 
       if (cardOne.images.id === cardTwo.images.id) {
-        cards[cardOne.id].images.src = './images/success.gif'
-        cards[cardTwo.id].images.src = './images/success.gif'
+        cards[cardOne.id].images.src = imgsuccess
+        cards[cardTwo.id].images.src = imgsuccess
       } else {
         cards[cardOne.id].isFlipped = false
         cards[cardTwo.id].isFlipped = false
