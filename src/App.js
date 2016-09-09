@@ -109,7 +109,7 @@ const App = React.createClass({
     if (flipped.length === 2) {
       // add blinking class here?
       console.log('adding timeout before running compare cards')
-      setTimeout(() => this.compareCards(flipped, cards), 2000);
+      setTimeout(() => this.compareCards(flipped, cards), 1950);
       // remove blinking class here?
     }
   },
