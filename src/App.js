@@ -24,9 +24,11 @@ import Header from './Header.js';
 import Content from './Content.js';
 import Footer from './Footer.js';
 
+let counter = 0;
 
 const App = React.createClass({
   displayName: 'App',
+
 
   getInitialState() {
     return {
@@ -42,17 +44,17 @@ const App = React.createClass({
   },
 
   handleStartNewGame() {
-
-    const numberOfCards = 16
+    counter = 0
+    const numberOfCards = 4
 
     let images = [
-      { id: 0, src: img01},
-      { id: 1, src: img02},
-      { id: 2, src: img03},
-      { id: 3, src: img04},
-      { id: 4, src: img05},
+      // { id: 0, src: img01},
+      // { id: 1, src: img02},
+      // { id: 2, src: img03},
+      // { id: 3, src: img04},
+      // { id: 4, src: img05},
       { id: 5, src: img06},
-      { id: 6, src: img07},
+      // { id: 6, src: img07},
       { id: 7, src: img08},
       // { id: 8, src: img09},
       // { id: 9, src: img10},
@@ -104,8 +106,9 @@ const App = React.createClass({
     console.log('updated state first time')
 
     if (flipped.length === 2) {
-        console.log('two cards clicked - would like to sleep function here')
-        setTimeout(() => this.compareCards(flipped, cards), 1500);
+      // add blinking class here? när flipped är två och
+      setTimeout(() => this.compareCards(flipped, cards), 1500);
+      // remove blinking class here?
     }
   },
 
@@ -116,6 +119,11 @@ const App = React.createClass({
     if (cardOne.images.id === cardTwo.images.id) {
       cards[cardOne.id].images.src = imgsuccess
       cards[cardTwo.id].images.src = imgsuccess
+      counter++
+      console.log(counter)
+      if (this.state.numberOfCards / counter === 2) {
+        console.log('you wins!')
+      }
     } else {
       cards[cardOne.id].isFlipped = false
       cards[cardTwo.id].isFlipped = false
@@ -139,6 +147,7 @@ const App = React.createClass({
           cards={this.state.cards}
           flipCard={this.flipCard}
           numberOfCards={this.state.numberOfCards}
+          counter={counter}
         />
         <Footer handleStartNewGame={this.handleStartNewGame}/>
       </div>

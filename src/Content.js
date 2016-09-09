@@ -10,6 +10,7 @@ const Content = React.createClass({
     cards: React.PropTypes.object,
     flipCard: React.PropTypes.func,
     numberOfCards: React.PropTypes.number,
+    counter: React.PropTypes.number,
   },
 
   renderCards() {
@@ -31,9 +32,20 @@ const Content = React.createClass({
   },
 
   render() {
+
+    let isDone
+    // just testing
+    if (this.props.counter === 1) {
+      isDone = "win"
+    } else {
+      isDone = "nowin"
+    }
+
     return (
       <div className="Content">
         {this.renderCards()}
+        <div id="winBox" className={isDone}>Mjao <br></br> Win!</div>
+
       </div>
     );
   },

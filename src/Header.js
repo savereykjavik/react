@@ -8,7 +8,8 @@ const Header = React.createClass({
   render() {
     return (
       <div className="Header">
-        Nara da cat memory
+        Nara-da-cat memory
+        <div className="intro">Matcha korten rätt i par</div>
       </div>
     );
   }

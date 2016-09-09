@@ -14,7 +14,6 @@ const Card = React.createClass({
   },
 
   render() {
-
     let image = (this.props.isFlipped) ? (<img className="Card-image" src={this.props.image.src} alt="card"/>) :
       (<img className="Back-image" src={imgback} alt="card"/>)
 
@@ -23,6 +22,7 @@ const Card = React.createClass({
       <div className="Card" onClick={this.props.flipCard.bind(null, this.props.id)}>
         {image}
       </div>
+
     );
   }
 })
