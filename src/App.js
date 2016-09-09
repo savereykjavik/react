@@ -46,7 +46,7 @@ const App = React.createClass({
 
   handleStartNewGame() {
     counter = 0
-    const numberOfCards = 16
+    const numberOfCards = 12
 
     let images = [
       { id: 0, src: img01},
@@ -58,11 +58,11 @@ const App = React.createClass({
       // { id: 6, src: img07},
       // { id: 7, src: img08},
       // { id: 8, src: img09},
-      { id: 9, src: img10},
+      // { id: 9, src: img10},
       { id: 10, src: img11},
       // { id: 11, src: img12},
       { id: 12, src: img13},
-      { id: 13, src: img14},
+      // { id: 13, src: img14},
       // { id: 14, src: img15},
       // { id: 15, src: img16}
     ]
