@@ -37,7 +37,7 @@ const Content = React.createClass({
 
     let isDone
     // just testing
-    if (this.props.counter === 8) {
+    if (this.props.counter === 6) {
       isDone = "win"
     } else {
       isDone = "nowin"
