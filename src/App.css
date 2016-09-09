@@ -87,8 +87,8 @@ img {
     }
 }
 .blink-image {
-    -moz-animation: blink normal 0.5s infinite ease-in-out; /* Firefox */
-    -webkit-animation: blink normal 0.5s infinite ease-in-out; /* Webkit */
-    -ms-animation: blink normal 0.5s infinite ease-in-out; /* IE */
-    animation: blink normal 0.5s infinite ease-in-out; /* Opera and prob css3 final iteration */
+    -moz-animation: blink normal 0.9s infinite ease-in-out; /* Firefox */
+    -webkit-animation: blink normal 0.9s infinite ease-in-out; /* Webkit */
+    -ms-animation: blink normal 0.9s infinite ease-in-out; /* IE */
+    animation: blink normal 0.9s infinite ease-in-out; /* Opera and prob css3 final iteration */
 }

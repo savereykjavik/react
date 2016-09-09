@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 
+// images
 import img01 from '../images/nara01.jpg';
 import img02 from '../images/nara02.jpg';
 import img03 from '../images/nara03.jpg';
@@ -45,23 +46,23 @@ const App = React.createClass({
 
   handleStartNewGame() {
     counter = 0
-    const numberOfCards = 4
+    const numberOfCards = 16
 
     let images = [
-      // { id: 0, src: img01},
+      { id: 0, src: img01},
       // { id: 1, src: img02},
-      // { id: 2, src: img03},
+      { id: 2, src: img03},
       // { id: 3, src: img04},
-      // { id: 4, src: img05},
+      { id: 4, src: img05},
       { id: 5, src: img06},
       // { id: 6, src: img07},
-      { id: 7, src: img08},
+      // { id: 7, src: img08},
       // { id: 8, src: img09},
-      // { id: 9, src: img10},
-      // { id: 10, src: img11},
+      { id: 9, src: img10},
+      { id: 10, src: img11},
       // { id: 11, src: img12},
-      // { id: 12, src: img13},
-      // { id: 13, src: img14},
+      { id: 12, src: img13},
+      { id: 13, src: img14},
       // { id: 14, src: img15},
       // { id: 15, src: img16}
     ]
@@ -103,11 +104,12 @@ const App = React.createClass({
         cards: cards,
         flipped: flipped
       })
-    console.log('updated state first time')
+    console.log('updated state, flipped card up')
 
     if (flipped.length === 2) {
-      // add blinking class here? när flipped är två och
-      setTimeout(() => this.compareCards(flipped, cards), 1500);
+      // add blinking class here?
+      console.log('adding timeout before running compare cards')
+      setTimeout(() => this.compareCards(flipped, cards), 2000);
       // remove blinking class here?
     }
   },
@@ -120,10 +122,7 @@ const App = React.createClass({
       cards[cardOne.id].images.src = imgsuccess
       cards[cardTwo.id].images.src = imgsuccess
       counter++
-      console.log(counter)
-      if (this.state.numberOfCards / counter === 2) {
-        console.log('you wins!')
-      }
+
     } else {
       cards[cardOne.id].isFlipped = false
       cards[cardTwo.id].isFlipped = false
@@ -133,7 +132,8 @@ const App = React.createClass({
       cards: cards,
       flipped: [],
     })
-    console.log('updated state after comparison')
+    console.log('updated state, closes or wins cards')
+
   },
 
   // skickar med något till footer, - REFERENS till funktionen, därför ingen parantes. this. säger att det är i hela scopet, had annars inte hitta. behöver inte heta handle.. men för enkelhets skull
@@ -148,6 +148,7 @@ const App = React.createClass({
           flipCard={this.flipCard}
           numberOfCards={this.state.numberOfCards}
           counter={counter}
+          flipped={this.state.flipped}
         />
         <Footer handleStartNewGame={this.handleStartNewGame}/>
       </div>

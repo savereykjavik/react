@@ -11,10 +11,11 @@ const Content = React.createClass({
     flipCard: React.PropTypes.func,
     numberOfCards: React.PropTypes.number,
     counter: React.PropTypes.number,
+    flipped: React.PropTypes.array,
   },
 
   renderCards() {
-    console.log('running renderCards')
+    console.log('ran renderCards')
     const _this = this
     const cards = _.map(this.props.cards, function(card) {
       return (
@@ -24,6 +25,7 @@ const Content = React.createClass({
           image={card.images}
           isFlipped={card.isFlipped}
           flipCard={_this.props.flipCard}
+          flipped={_this.props.flipped}
         />
       )
     })
@@ -35,7 +37,7 @@ const Content = React.createClass({
 
     let isDone
     // just testing
-    if (this.props.counter === 1) {
+    if (this.props.counter === 8) {
       isDone = "win"
     } else {
       isDone = "nowin"
