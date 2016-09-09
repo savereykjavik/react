@@ -15,7 +15,7 @@ const Content = React.createClass({
   },
 
   renderCards() {
-    console.log('ran renderCards')
+    // console.log('ran renderCards')
     const _this = this
     const cards = _.map(this.props.cards, function(card) {
       return (

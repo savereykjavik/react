@@ -16,9 +16,6 @@ const Card = React.createClass({
   },
 
   render() {
-    console.log('flipped: ', this.props.flipped)
-    console.log(this.props.id)
-
     let imgClass = classNames({
       'Card-image': this.props.isFlipped,
       'Back-image': !this.props.isFlipped,
@@ -31,7 +28,7 @@ const Card = React.createClass({
       (<img className={imgClass} src={this.props.image.src} alt="card"/>) :
       (<img className={imgClass} src={imgback} alt="card"/>)
 
-// bind argument etc.. kolla upp mer
+// bind argument etc..
     return (
       <div className="Card" onClick={this.props.flipCard.bind(null, this.props.id)}>
         {image}
