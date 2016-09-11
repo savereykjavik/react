@@ -15,10 +15,10 @@
 
 @media screen and (max-width: 480px) {
     .Card {
-        /*padding: 3px;*/
+        padding: 2px;
     }
 
     .Back-image:hover {
-        transform: scale(1.03);
+        transform: scale(1);
     }
 }
