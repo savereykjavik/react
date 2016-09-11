@@ -42,7 +42,6 @@ button:focus {outline:0;}
 img {
   max-width: 100%;
   border-radius: 10px;
-  display: inline-table;
 }
 
 /* Firefox old*/
