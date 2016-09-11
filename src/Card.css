@@ -15,7 +15,7 @@
 
 @media screen and (max-width: 480px) {
     .Card {
-        padding: 1px;
+        /*padding: 3px;*/
     }
 
     .Back-image:hover {
