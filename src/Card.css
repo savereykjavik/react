@@ -2,6 +2,7 @@
   width: 25%;
   padding: 2px;
   float: left;
+  cursor: pointer;
 }
 
 .Back-image {
@@ -9,5 +10,5 @@
 }
 .Back-image:hover {
     cursor: pointer;
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
