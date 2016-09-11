@@ -39,6 +39,7 @@ const Content = React.createClass({
     // just testing
     if (this.props.counter === 6) {
       isDone = "win"
+
     } else {
       isDone = "nowin"
     }
