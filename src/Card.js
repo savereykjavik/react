@@ -1,6 +1,6 @@
 import React from 'react';
 import imgback from '../images/back.jpg';
-import imgbackground from '../images/background.jpg';
+import imgbackground from '../images/bgr.png';
 import './Card.css';
 
 let classNames = require('classnames');
@@ -26,7 +26,7 @@ const Card = React.createClass({
 
     let image = (this.props.isFlipped) ?
       (<img className={imgClass} src={this.props.image.src} alt="card"/>) :
-      (<img className={imgClass} src={imgback} alt="card"/>)
+      (<img className={imgClass} src={imgbackground} alt="card"/>)
 
 // bind argument etc..
     return (
