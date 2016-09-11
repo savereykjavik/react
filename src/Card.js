@@ -11,7 +11,7 @@ const Card = React.createClass({
     id: React.PropTypes.number,
     image: React.PropTypes.object,
     isFlipped: React.PropTypes.bool,
-    flipCard: React.PropTypes.func,
+    handleCardclick: React.PropTypes.func,
     flipped: React.PropTypes.array,
   },
 
@@ -30,7 +30,7 @@ const Card = React.createClass({
 
 // bind argument etc..
     return (
-      <div className="Card" onClick={this.props.flipCard.bind(null, this.props.id)}>
+      <div className="Card" onClick={this.props.handleCardclick.bind(null, this.props.id)}>
         {image}
       </div>
 

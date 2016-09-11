@@ -89,57 +89,48 @@ const App = React.createClass({
 
   },
 
-  // handleCardclick() {
-  //   // if card isflipped already, do nothing
-  //
-  //   // if two cards are already flipped:
-  //   // 1. run comparison + set state
-  //   // 2. run flip card + set state
-  //
-  //   // if no other card is flipped:
-  //   // run flip card + set state
-  //
-  //   // if one more card is flipped:
-  //   // run flip card + set state
-  //   // run comparison + set state
-  //
-  // },
+  handleCardclick(cardID) {
+    // if card isflipped already, do nothing
+    if (this.state.cards[cardID].isFlipped) {return}
+
+    // there is a setTimeOut function running
+    if (this.state.timeOutID) {
+      clearTimeout(this.state.timeOutID)
+      this.compareCards(() => this.flipCard(cardID))
+
+    } else {
+      this.flipCard(cardID)
+    }
+  },
 
   flipCard(cardID) {
-    if (this.state.cards[cardID].isFlipped) {return}
-    if (this.state.flipped.length === 2) { return
-      //
-      // clearTimeout(this.state.compareID)
-      // this.compareCards(this.state.flipped, this.state.cards)
-      // // cancel setTimeout
-      // // run compareCards this.state.flipped + cards
-      }
 
     let cards = _.cloneDeep(this.state.cards)
     cards[cardID].isFlipped = true
 
     let flipped = _.cloneDeep(this.state.flipped)
     flipped.push(cards[cardID])
-    console.log(flipped)
 
-    let compareID = null
+    let timeOutID = null
 
     if (flipped.length === 2) {
       // console.log('adding timeout before running compare cards')
-      compareID = setTimeout(() => this.compareCards(flipped, cards), 1950);
+      timeOutID = setTimeout(this.compareCards, 1950);
     }
 
     this.setState({
         cards: cards,
         flipped: flipped,
-        compareID: compareID
+        timeOutID: timeOutID
       })
     // console.log('updated state, flipped card up')
-
-
   },
 
-  compareCards(flipped, cards) {
+  compareCards(callback) {
+
+    let cards = _.cloneDeep(this.state.cards)
+    let flipped = _.cloneDeep(this.state.flipped)
+
     const cardOne = flipped[0]
     const cardTwo = flipped[1]
 
@@ -156,7 +147,8 @@ const App = React.createClass({
     this.setState({
       cards: cards,
       flipped: [],
-    })
+      timeOutID: null,
+    }, callback)
     // console.log('updated state, closes or wins cards')
 
   },
@@ -170,12 +162,15 @@ const App = React.createClass({
         <Header />
         <Content
           cards={this.state.cards}
-          flipCard={this.flipCard}
+          handleCardclick={this.handleCardclick}
           numberOfCards={this.state.numberOfCards}
           counter={counter}
           flipped={this.state.flipped}
+
         />
-        <Footer handleStartNewGame={this.handleStartNewGame}/>
+        <Footer
+        handleStartNewGame={this.handleStartNewGame}
+        />
         <div className="low">/ Caroline Thordenberg | Data Strategist @ <a href="http://www.yuriagency.com/" target="_blank">YURI</a> and designer at <a href="http://www.silvertheories.com/" target="_blank">Silver theories</a>. Built using JavaScript and React during a weeks code camp in Barcelona with <a href="http://www.tjejerkodar.se/" target="_blank">Tjejer Kodar</a>!
         </div>
       </div>

@@ -8,7 +8,7 @@ const Content = React.createClass({
 
   propTypes: {
     cards: React.PropTypes.object,
-    flipCard: React.PropTypes.func,
+    handleCardclick: React.PropTypes.func,
     numberOfCards: React.PropTypes.number,
     counter: React.PropTypes.number,
     flipped: React.PropTypes.array,
@@ -24,7 +24,7 @@ const Content = React.createClass({
           id={card.id}
           image={card.images}
           isFlipped={card.isFlipped}
-          flipCard={_this.props.flipCard}
+          handleCardclick={_this.props.handleCardclick}
           flipped={_this.props.flipped}
         />
       )
