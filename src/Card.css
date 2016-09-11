@@ -1,7 +1,6 @@
 .Card {
-  display: block;
   width: 25%;
-  padding: 3px;
+  padding: 2px;
   float: left;
   cursor: pointer;
 }
