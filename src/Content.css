@@ -1,4 +1,6 @@
 .Content {
+  overflow: hidden;
+  position: relative;
   display: inline-table;
   margin: 10px auto;
   padding: 5px;

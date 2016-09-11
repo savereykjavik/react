@@ -20,9 +20,10 @@
 }
 
 .win {
+  margin: -5px;
   transition: all 0.5s ease-in;
   transform: scale(1);
-  font-size: 8em;
+  font-size: 8rem;
   width: 500px;
   height: 375px;
   padding-top: 30px;
