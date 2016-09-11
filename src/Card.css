@@ -1,6 +1,6 @@
 .Card {
   width: 25%;
-  padding: 2px;
+  padding: 0px;
   float: left;
   cursor: pointer;
 }
@@ -10,5 +10,5 @@
 }
 .Back-image:hover {
     cursor: pointer;
-    transform: scale(1.05);
+    /*transform: scale(1.05);*/
 }
