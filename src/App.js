@@ -89,29 +89,55 @@ const App = React.createClass({
 
   },
 
+  // handleCardclick() {
+  //   // if card isflipped already, do nothing
+  //   if (this.state.cards[cardID].isFlipped) {return}
+  //   // if two cards are already flipped:
+  //   // 1. run comparison + set state
+  //   // 2. run flip card + set state
+  //
+  //   // if no other card is flipped:
+  //   // run flip card + set state
+  //
+  //   // if one more card is flipped:
+  //   // run flip card + set state
+  //   // run comparison + set state
+  //
+  // },
+
   flipCard(cardID) {
 
-    if (this.state.cards[cardID].isFlipped) {return}
-    if (this.state.flipped.length === 2) {return}
+
+    if (this.state.flipped.length === 2) { return
+      //
+      // clearTimeout(this.state.compareID)
+      // this.compareCards(this.state.flipped, this.state.cards)
+      // // cancel setTimeout
+      // // run compareCards this.state.flipped + cards
+      }
 
     let cards = _.cloneDeep(this.state.cards)
     cards[cardID].isFlipped = true
 
     let flipped = _.cloneDeep(this.state.flipped)
     flipped.push(cards[cardID])
+    console.log(flipped)
+
+    let compareID = null
+
+    if (flipped.length === 2) {
+      // console.log('adding timeout before running compare cards')
+      compareID = setTimeout(() => this.compareCards(flipped, cards), 1950);
+    }
 
     this.setState({
         cards: cards,
-        flipped: flipped
+        flipped: flipped,
+        compareID: compareID
       })
     // console.log('updated state, flipped card up')
 
-    if (flipped.length === 2) {
-      // add blinking class here?
-      // console.log('adding timeout before running compare cards')
-      setTimeout(() => this.compareCards(flipped, cards), 1950);
-      // remove blinking class here?
-    }
+
   },
 
   compareCards(flipped, cards) {
