@@ -150,11 +150,8 @@ const App = React.createClass({
       timeOutID: null,
     }, callback)
     // console.log('updated state, closes or wins cards')
-
   },
 
-  // skickar med något till footer, - REFERENS till funktionen, därför ingen parantes. this. säger att det är i hela scopet, had annars inte hitta. behöver inte heta handle.. men för enkelhets skull
-  // skickar med referens till funktionen flipCard
   render() {
 
     return (
@@ -166,7 +163,6 @@ const App = React.createClass({
           numberOfCards={this.state.numberOfCards}
           counter={counter}
           flipped={this.state.flipped}
-
         />
         <Footer
         handleStartNewGame={this.handleStartNewGame}
