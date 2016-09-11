@@ -12,3 +12,13 @@
     cursor: pointer;
     transform: scale(1.05);
 }
+
+@media screen and (max-width: 480px) {
+    .Card {
+        padding: 1px;
+    }
+
+    .Back-image:hover {
+        transform: scale(1.03);
+    }
+}
