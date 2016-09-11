@@ -91,7 +91,7 @@ const App = React.createClass({
 
   // handleCardclick() {
   //   // if card isflipped already, do nothing
-  //   if (this.state.cards[cardID].isFlipped) {return}
+  //
   //   // if two cards are already flipped:
   //   // 1. run comparison + set state
   //   // 2. run flip card + set state
@@ -106,8 +106,7 @@ const App = React.createClass({
   // },
 
   flipCard(cardID) {
-
-
+    if (this.state.cards[cardID].isFlipped) {return}
     if (this.state.flipped.length === 2) { return
       //
       // clearTimeout(this.state.compareID)
