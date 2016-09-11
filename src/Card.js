@@ -1,6 +1,6 @@
 import React from 'react';
 import imgback from '../images/back.jpg';
-import imgbackground from '../images/bgr.png';
+import imgbackground from '../images/backgr.jpg';
 import './Card.css';
 
 let classNames = require('classnames');
