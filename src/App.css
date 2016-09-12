@@ -40,18 +40,28 @@
 
 button:focus {outline:0;}
 
-@keyframes scale {
-  0% {scale:1}
-  50% {scale: 1.03}
-  100% {scale: 1}
+@-webkit-keyframes scale {
+  from {
+    -webkit-transform: scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+    opacity: 1.0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 0.75;
+  }
 }
 
-.scale {
-    -moz-animation: scale normal 0.9s infinite ease-in-out; /* Firefox */
-    -webkit-animation: scale normal 0.9s infinite ease-in-out; /* Webkit */
-    -ms-animation: scale normal 0.9s infinite ease-in-out; /* IE */
-    animation: scale normal 0.9s infinite ease-in-out; /* Opera and prob css3 final iteration */
+.scalePulse {
+  -webkit-animation-name: scale;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
 }
+
+
 
 
 img {
