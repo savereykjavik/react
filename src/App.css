@@ -40,6 +40,20 @@
 
 button:focus {outline:0;}
 
+@keyframes scale {
+  0% {scale:1}
+  50% {scale: 1.03}
+  100% {scale: 1}
+}
+
+.scale {
+    -moz-animation: scale normal 0.9s infinite ease-in-out; /* Firefox */
+    -webkit-animation: scale normal 0.9s infinite ease-in-out; /* Webkit */
+    -ms-animation: scale normal 0.9s infinite ease-in-out; /* IE */
+    animation: scale normal 0.9s infinite ease-in-out; /* Opera and prob css3 final iteration */
+}
+
+
 img {
   max-width: 100%;
   border-radius: 10px;
