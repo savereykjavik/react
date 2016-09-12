@@ -19,7 +19,7 @@ const Card = React.createClass({
     let imgClass = classNames({
       'Card-image': this.props.isFlipped,
       'Back-image': !this.props.isFlipped,
-      'blink-image scales': this.props.flipped.length === 2 &&
+      'blink-image': this.props.flipped.length === 2 &&
         (this.props.id === this.props.flipped[0].id ||
         this.props.id === this.props.flipped[1].id),
     })
