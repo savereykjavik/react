@@ -167,7 +167,7 @@ const App = React.createClass({
         <Footer
         handleStartNewGame={this.handleStartNewGame}
         />
-        <div className="low">/ Caroline Thordenberg | Data Strategist @ <a href="http://www.yuriagency.com/" target="_blank">YURI</a> and designer at <a href="http://www.silvertheories.com/" target="_blank">Silver theories</a>. Built using JavaScript and React during a weeks code camp in Barcelona with <a href="http://www.tjejerkodar.se/" target="_blank">Tjejer Kodar</a>!
+        <div className="low">/ Caroline Thordenberg | Growth & Data Strategist @ <a href="http://www.yuriagency.com/" target="_blank">YURI</a> and designer at <a href="http://www.silvertheories.com/" target="_blank">Silver theories</a>. Built using JavaScript and React during a weeks code camp in Barcelona with <a href="http://www.tjejerkodar.se/" target="_blank">Tjejer Kodar</a>!
         </div>
       </div>
     );
